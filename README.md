@@ -1,4 +1,4 @@
-# Social-Distancing-using-Client-Server-
+# Social-Distancing using Client Server
 
 Due to the Covid-19 sanitary rules, people have to keep meter apart from each other.
 The project aim to calculate distance between people using [Darknet](https://pjreddie.com/darknet/yolo/ "Named link title") implementation of Yolo-v3 Object Detection.  
