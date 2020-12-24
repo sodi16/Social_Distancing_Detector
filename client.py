@@ -2,25 +2,11 @@
 # load yolov3 model and perform object detection
 # based on https://github.com/experiencor/keras-yolo3
 import numpy as np
-from numpy import expand_dims
 from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import load_img
-from tensorflow.keras.preprocessing.image import img_to_array
-from matplotlib import pyplot as plt
-from matplotlib.patches import Rectangle
-import math
-import pylab
-from IPython.display import clear_output
 import cv2
 import shutil
 import os
-import io
 import socket
-import struct
-import time
-import pickle
-import zlib
-
 
 def load_frames_of_video(video_path, new_frame_path):
     vidcap = cv2.VideoCapture(video_path)
