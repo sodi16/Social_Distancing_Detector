@@ -1,29 +1,11 @@
 import numpy as np
-from numpy import expand_dims
 from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import load_img
-from tensorflow.keras.preprocessing.image import img_to_array
-from matplotlib import pyplot as plt
-from matplotlib.patches import Rectangle
 import math
-import psutil
-import pylab as pl
-from IPython.display import clear_output
 import cv2
 from PIL import Image, ImageDraw
-import shutil
-from PIL import Image
 import os
 import io
 import socket
-import struct
-import time
-import pickle
-from os import listdir
-import os
-from re import findall
-from utility import wait_for_acknowledge
-import zlib
 
 
 class BoundBox:
@@ -228,18 +210,6 @@ def draw_boxes3(rect, v_boxes, v_centroid, red_area, green_area):
     return rect
 
 
-
-"""labels = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck",
-          "boat", "traffic light", "fire hydrant", "stop sign", "parking meter", "bench",
-          "bird", "cat", "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe",
-          "backpack", "umbrella", "handbag", "tie", "suitcase", "frisbee", "skis", "snowboard",
-          "sports ball", "kite", "baseball bat", "baseball glove", "skateboard", "surfboard",
-          "tennis racket", "bottle", "wine glass", "cup", "fork", "knife", "spoon", "bowl", "banana",
-          "apple", "sandwich", "orange", "broccoli", "carrot", "hot dog", "pizza", "donut", "cake",
-          "chair", "sofa", "pottedplant", "bed", "diningtable", "toilet", "tvmonitor", "laptop", "mouse",
-          "remote", "keyboard", "cell phone", "microwave", "oven", "toaster", "sink", "refrigerator",
-          "book", "clock", "vase", "scissors", "teddy bear", "hair drier", "toothbrush"]"""
-
 labels = ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck",
           "boat", "traffic light", "fire hydrant", "stop sign", "parking meter", "bench",
           "bird", "cat", "dog", "horse", "sheep", "cow", "elephant", "bear", "zebra", "giraffe",
@@ -331,8 +301,7 @@ for i in range(imgCount_from_server):
     image_array = image_array.reshape(image_array.shape[1:])
 
     rect = draw_boxes3(image_array, v_boxes, v_centroid, red_area, green_area)
-    #rect.show()
-    #rect.save(fr'C:\Users\so16s\AppData\Roaming\JetBrains\PyCharmCE2020.3\scratches\YOLO\darknet\new_pic\frame{i}.jpg')
+    rect.show()
 
     client.sendall(bytes("ACK", "utf-8"))
 
